@@ -10,6 +10,8 @@ class App extends Component {
         <div className="container">
           <div className="header">
             <h1>Store</h1>
+          </div>
+          <div className="left">
             <ul>
               <li>
                 <Link to="/">Home</Link>
