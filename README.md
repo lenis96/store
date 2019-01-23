@@ -1,1 +1,4 @@
-proyecto de tienda con react
+# Store Project with  React and Express
+
+## Future:
+* Integration with GRAPHQL
