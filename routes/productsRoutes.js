@@ -4,4 +4,6 @@ const prodructsController=require('./../controllers/productsController')
 
 productsRoutes.get('/',prodructsController.getProducts)
 
+productsRoutes.get('/:id',prodructsController.getProductById)
+
 module.exports=productsRoutes

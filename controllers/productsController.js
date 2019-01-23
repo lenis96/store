@@ -1,7 +1,26 @@
+'use strict'
+const sequalize=require('sequelize')
+const models=require('./../models')
+const productsController={
 
-const productsController={}
+    getProducts:(req,res)=>{
+        models.Product.findAll().then(products=>{
+            res.json({products:products})
+        }).catch((err)=>{
 
-productsController.getProducts=(req,res)=>{
-    res.json([{id:1}])
+        })
+    },
+
+    getProductById:(req,res)=>{
+        
+        models.Product.findById(req.params.id).then(product=>{
+            res.json(product)
+        }).catch((err)=>{
+            
+        })
+    }
+
 }
+
+
 module.exports=productsController
