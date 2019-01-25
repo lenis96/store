@@ -6,6 +6,10 @@ const path = require('path');
 const app=express()
 const api=require('./routes/api')
 
+const passport    = require('passport');
+
+require('./passport');
+
 app.use(bodyParser.json())
 
 app.use(express.static('public'))
