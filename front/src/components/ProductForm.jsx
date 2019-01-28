@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import {createProduct} from '../utils/api'
+import {createProduct,getProduct} from '../utils/api'
 class ProductsForm extends Component {
   constructor(props){
     super(props)
@@ -9,6 +9,11 @@ class ProductsForm extends Component {
   }
 
   componentDidMount(){
+    if(this.props.match.params.id!=null){
+      getProduct(this.props.match.params.id).then(res=>{
+        this.setState(res.data)
+      })
+    }
   }
 
   handleSubmit=(event)=>{

@@ -13,7 +13,7 @@ const productsController={
 
     getProductById:(req,res)=>{
         
-        models.Product.findByIPk(req.params.id).then(product=>{
+        models.Product.findByPk(req.params.id).then(product=>{
             res.json(product)
         }).catch((err)=>{
 

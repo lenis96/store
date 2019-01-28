@@ -7,7 +7,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
 import {getProducts,getProduct,createProduct} from './../utils/api'
 class ProductsList extends Component {
@@ -17,8 +16,9 @@ class ProductsList extends Component {
   }
 
   componentDidMount(){
-    this.setState({products:getProducts()})
-    console.log(getProducts())
+    getProducts().then(res=>{
+      this.setState({products:res.data.products})
+    })
   }
   render() {
     return (
