@@ -12,12 +12,33 @@ import {getProducts,getProduct,createProduct} from './../utils/api'
 class ProductsList extends Component {
   constructor(props){
     super(props)
-    this.state={products:[]}
+    this.state={products:[],content:null}
   }
 
   componentDidMount(){
+    this.setState({content:<div>
+      <h2>Loading...</h2>
+    </div>})
     getProducts().then(res=>{
       this.setState({products:res.data.products})
+      this.setState({content:<Table>
+        <TableHead>
+          <TableRow>
+
+            <TableCell>Description</TableCell>
+            <TableCell>Prices</TableCell>
+            <TableCell>Quantity</TableCell>
+            <TableCell>Edit</TableCell>
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {this.state.products.map((elem)=>{
+            return <ProductRow key={elem.id} idProduct={elem.id} description={elem.description} price={elem.price} quantity={elem.quantity}/>
+
+          })}
+        </TableBody>
+       </Table>})
     })
   }
   render() {
@@ -25,24 +46,7 @@ class ProductsList extends Component {
      <div>
        <h2>Product List</h2>
        <div>
-         <Table>
-          <TableHead>
-            <TableRow>
-
-              <TableCell>Description</TableCell>
-              <TableCell>Prices</TableCell>
-              <TableCell>Quantity</TableCell>
-              <TableCell>Edit</TableCell>
-
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.state.products.map((elem)=>{
-              return <ProductRow key={elem.id} idProduct={elem.id} description={elem.description} price={elem.price} quantity={elem.quantity}/>
-
-            })}
-          </TableBody>
-         </Table>
+         {this.state.content}
        </div>
      </div>
      
