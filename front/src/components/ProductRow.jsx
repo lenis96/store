@@ -5,9 +5,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 class ProductRow extends Component {
-    constructor(props){
-        super(props)
-    }
+    // constructor(props){
+    //     super(props)
+    // }
   render() {
     return (
      <TableRow>

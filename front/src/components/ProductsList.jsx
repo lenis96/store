@@ -8,7 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import {getProducts,getProduct,createProduct} from './../utils/api'
+import {getProducts} from './../utils/api'
 class ProductsList extends Component {
   constructor(props){
     super(props)

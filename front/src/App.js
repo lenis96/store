@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import ProductsList from './components/ProductsList.jsx'
 import ProductForm from './components/ProductForm.jsx'
+import LoginForm from './components/LoginForm.jsx'
 class App extends Component {
   render() {
     return (
@@ -31,6 +32,7 @@ class App extends Component {
             <div>
 
           <Route exact path="/"  />
+            <Route exact path="/login" component={LoginForm}/>
             <Route exact path="/products" component={ProductsList} />
             <Route exact path="/product" component={ProductForm} />
             <Route exact path="/product/:id" component={ProductForm}/>
