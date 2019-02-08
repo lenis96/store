@@ -13,6 +13,7 @@ sequelize
 // load models
 var models = [
   'Product',
+  'Category'
 ]
 models.forEach(function(model) {
   module.exports[model] = sequelize.import(__dirname + '/' + model);

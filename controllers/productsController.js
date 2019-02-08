@@ -35,7 +35,7 @@ const productsController={
     },
 
     updateProductById:(req,res)=>{
-        models.Product.findById(req.params.id).then(product=>{
+        models.Product.findByPk(req.params.id).then(product=>{
             return product
         }).then((product)=>{
             product.description=req.body.description
